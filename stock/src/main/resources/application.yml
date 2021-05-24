@@ -1,0 +1,47 @@
+spring:
+  application:    name: stock
+  cloud:
+    config:
+      name: stock
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  jpa:
+    show-sql: true  
+    hibernate:  
+      ddl-auto: create  
+    database-platform: org.hibernate.dialect.PostgreSQLDialect  
+  datasource:  
+    url: "jdbc:postgresql://192.168.2.13:5432/stock"  
+    username: postgres  
+    password: ClavePruebas01!
+server:
+  port: 9001
+  servlet:
+    context-path: /stock
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /stock/swagger/swagger2.json
+management:
+  endpoints:
+    web:
+      base-path: /stock/actuator
+application:
+  deimos:
+    api:
+      path: stock/api/v1.0
+info:
+  project:
+    version: 1.0.0
+    title: MS-Stock.
+    description: Management sinisters of zurich.
+  
+
+  
+  
+
+  
